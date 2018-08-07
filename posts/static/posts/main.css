@@ -1,0 +1,168 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    font-family: Arial, Helvetica, sans-serif;
+
+
+}
+
+#topBar{
+    background-color: #00bfa5;
+    height: 50px;;
+    color: #fff;
+    margin-top:0px;
+}
+
+#topBar h2{
+    padding-left: 5%;
+    margin-top:0%;
+    padding-top: 10px;
+}
+
+#main{
+    width: 80%;
+    /* height: 500px; */
+    margin-left: 5%;
+    margin-top: 20px;
+    border: 1px dotted #000;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+}
+
+
+
+#addItem input[type="submit"] {
+    background-color: #00bfa5;
+    color: #fff;
+    width: 70px;
+    border-style: none;
+    height: 30px;
+    margin-left: 5px;
+}
+
+#addItem input[type="text"] {
+    height: 25px;
+    width: 80%;
+    padding-left: 20px;
+}
+
+#list h3{
+    padding-left: 20px;
+}
+
+#list ul{
+   border: 1px dotted #000;
+   border-radius: 10px;
+   width: 72%;
+   margin-left: 20px;
+   padding-left: 0px;
+   /* height: 200px; */
+   background-color: #eceff1;
+    
+}
+
+#list li{
+    list-style: none;
+    padding: 5px;
+    border-bottom: 1px dotted #000;
+    padding-left: 20px;
+
+}
+
+#list li:last-child{
+    border-bottom: none;
+}
+
+#list li a{
+    text-decoration: none;
+    color: #000
+}
+
+#list li a:last-child{
+    float: right;
+    text-decoration: underline;
+    color:#000; 
+    font-style: italic;
+    padding-right: 5px;
+}
+
+#psudoDiv{
+    height: 190px;
+}
+
+#footer{
+    background-color: #00bfa5;
+    color: #fff;
+    height: 35px;
+    /* position: fixed;
+    bottom: 0;
+    width: 100%; */
+
+}
+
+#footer p{
+    font-size: 20px;
+    padding-left: 47%;
+    padding-top: 8px;
+    /* margin-top: 0; */
+}
+
+#note{
+    line-height: 150%;
+}
+
+ #date p{
+    float: right;
+    font-size: 15px;
+    
+}
+
+.line{
+    width: 75%;
+    margin-left: 0px;
+}
+
+.modify{
+    padding-top: 20px;
+}
+
+.modify input[type="text"]{
+    width: 60%;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px dotted #000;
+    padding-left: 10px;
+}
+
+.modify textarea{
+    max-width: 80%;
+    min-width: 70%;
+    min-height: 150px;
+    max-height: 170px;
+    border-radius: 5px;
+    border: 1px dotted #000;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.modify input[type="submit"]{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+
+    background-color: #00bfa5;
+    color: #fff;
+    width: 70px;
+    border-style: none;
+    height: 30px;
+}
+
+/* @media(max-height: 700px){
+
+    #psudoDiv{
+        height: 500px;
+    }
+} */

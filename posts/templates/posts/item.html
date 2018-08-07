@@ -1,0 +1,12 @@
+{% extends "posts/base.html" %}
+{% block main%}
+
+    <h3>{{post.title}} :</h3>
+    <hr class="line">
+    <div id="note">
+        <p>{{post.content}} </p>
+            <div style="height: 20px; clear: both;"></div>
+            <div id="date"><p>Created At: {{post.createted_at}}</p> </div>
+    </div>
+    
+{%endblock%}

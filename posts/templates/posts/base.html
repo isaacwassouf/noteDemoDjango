@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'posts/main.css' %}" />
+</head>
+<body>
+    
+    <div id="topBar">
+        <h2>List Items</h2>
+    </div>
+
+    <div id="main">
+        {% block main%}
+        <!-- Content goes here -->
+        {% endblock %}
+        <div style="height: 20px;"></div>
+    </div>
+    <div id="psudoDiv" ></div>
+    <footer id="footer"> <p>Made with &hearts;</p></footer>
+</body>
+</html>
