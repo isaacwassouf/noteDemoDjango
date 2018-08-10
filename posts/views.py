@@ -1,42 +1,62 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from .models import Post
+from .models import Post,User
 
 # Create your views here.
 
 def index(request):
+    if(request.method=='POST'):
+        username=request.POST['username']
+        password=request.POST['password']
+        user=User.objects.filter(username=username,password=password)
+        if (user.exists()):
+            user =User.objects.get(username=username)
+            id=user.id
+            return redirect('/posts/'+ str(id))
 
-    posts=Post.objects.all()
+
+
+def posts(request,uid):
+    posts=Post.objects.filter(user=uid)
     context={
-        'posts': posts
+        'posts':posts,
+        'uid': uid
     }
     return render(request,'posts/index.html',context)
 
-def item(request,id):
-    post= Post.objects.get(id=id)
+
+def item(request,id,uid):
+    post= Post.objects.get(id=id,user=uid)
     context={
         'post': post
     }
     return render(request,'posts/item.html',context)
 
-def modify(request,id):
-    post=Post.objects.get(id=id)
+def modify(request,id,uid):
+    post=Post.objects.get(id=id,user=uid)
     context={
         'post':post
     }
     return render(request,'posts/modify.html',context)
 
-def add(request):
+def add(request,uid):
     if(request.method =='GET'):
         title=request.GET['title']
-        context={'title':title}
+        context={
+            'title':title,
+            'uid':uid
+        }
         return render(request,'posts/add.html',context)
 
     else:
         title=request.POST['title']
         content=request.POST['content']
 
-        newPost=Post( title=title,content=content)
+        user= User.objects.get(id=uid)
+        newPost=Post( title=title,content=content,user=user)
         newPost.save()
-        return redirect('/posts')
+        return redirect('/posts/'+str(uid))
 
+def home(request):
+    if(request.method=='GET'):
+        return render(request,'posts/login.html')

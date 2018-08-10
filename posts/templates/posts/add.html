@@ -1,12 +1,15 @@
 {% extends "posts/base.html" %}
 {% block main%}
-<div class="modify">
-    <form action="done" method="POST">
-        {% csrf_token %}
-        <input type="text" value="{{title}}" name="title">
-        <hr class="line">
-        <textarea name="content"></textarea>
-        <input type="submit" value="Add">
-    </form>
+<div id="main">
+    <div class="modify">
+        <form action="done" method="POST">
+            {% csrf_token %}
+            <input type="text" value="{{title}}" name="title">
+            <hr class="line">
+            <textarea name="content"></textarea>
+            <input type="submit" value="Add">
+        </form>
+    </div>
+    <div style="height: 20px;"></div>
 </div>
 {% endblock%}

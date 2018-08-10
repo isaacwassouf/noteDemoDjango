@@ -12,7 +12,7 @@ class User(models.Model):
     password=models.CharField(max_length=30)
 
     def __str__(self):
-        return "{}{}".format(self.firstname,self.lastname)
+        return "{} {}".format(self.firstname,self.lastname)
 
 
 class Post(models.Model):

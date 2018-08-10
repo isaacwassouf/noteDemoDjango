@@ -160,6 +160,37 @@ body{
     height: 30px;
 }
 
+#mainSign{
+    border: 1px dotted #000;
+    width: 40%;
+    height: 400px;
+    margin-top: 30px;
+    margin-left: 20%;
+    padding-left: 16%;
+    padding-top: 75px;
+}
+
+#mainSign h3{
+    margin-left: 3%;
+    max-width: 338px;
+}
+
+#mainSign input{
+    width: 50%;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px dotted #000;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+#mainSign input[type="submit"]{
+    width: 25%;
+    margin-left: 12%;
+    background-color: #00bfa5;
+    color: #fff;
+}
+
 /* @media(max-height: 700px){
 
     #psudoDiv{

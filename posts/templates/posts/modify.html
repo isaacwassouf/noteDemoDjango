@@ -1,11 +1,14 @@
 {% extends "posts/base.html" %}
 {% block main%}
-<div class="modify">
-    <form>
-        <input type="text" value="{{post.title}}">
-        <hr class="line">
-        <textarea >{{post.content}}</textarea>
-        <input type="submit" value="Change">
-    </form>
+<div id="main">
+    <div class="modify">
+        <form>
+            <input type="text" value="{{post.title}}">
+            <hr class="line">
+            <textarea >{{post.content}}</textarea>
+            <input type="submit" value="Change">
+        </form>
+    </div>
+    <div style="height: 20px;"></div>
 </div>
 {% endblock%}

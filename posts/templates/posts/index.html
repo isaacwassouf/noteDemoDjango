@@ -1,8 +1,9 @@
-    {% extends "posts/base.html" %}
-    {% block main%}
+{% extends "posts/base.html" %}
+{% block main%}
+<div id="main">
         <div id="addItem">
             <h3>Add Item</h3>
-            <form action="add" method="GET">
+            <form action="{{uid}}/add" method="GET">
                 <input type="text" name="title">
                 <input type="submit" value="Add">
             </form>
@@ -12,8 +13,10 @@
             <h3>Items: </h3>
             <ul>
                 {% for post in posts%}
-                    <li><a href="info/{{post.id}}">{{post.title}}</a> <a href="modify/{{post.id}}">Modify</a></li>
+                    <li><a href="{{post.user.id}}/info/{{post.id}}">{{post.title}}</a> <a href="{{post.user.id}}/modify/{{post.id}}">Modify</a></li>
                 {%endfor%}
             </ul>
         </div>
-    {%endblock%}
+        <div style="height: 20px;"></div>
+</div>
+{%endblock%}

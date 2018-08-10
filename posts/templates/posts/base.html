@@ -13,13 +13,9 @@
     <div id="topBar">
         <h2>List Items</h2>
     </div>
-
-    <div id="main">
-        {% block main%}
-        <!-- Content goes here -->
-        {% endblock %}
-        <div style="height: 20px;"></div>
-    </div>
+    {% block main%}
+        <!-- content goes here -->
+    {% endblock %}
     <div id="psudoDiv" ></div>
     <footer id="footer"> <p>Made with &hearts;</p></footer>
 </body>
