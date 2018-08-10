@@ -33,11 +33,23 @@ def item(request,id,uid):
     return render(request,'posts/item.html',context)
 
 def modify(request,id,uid):
-    post=Post.objects.get(id=id,user=uid)
-    context={
+    if (request.method=='GET'):
+        post=Post.objects.get(id=id,user=uid)
+        context={
         'post':post
-    }
-    return render(request,'posts/modify.html',context)
+        }
+        return render(request,'posts/modify.html',context)
+
+    else:
+        title=request.POST['title']
+        content=request.POST['content']
+
+        post=Post.objects.get(id=id)
+        post.title=title
+        post.content=content
+        post.save()
+        return redirect('/posts/'+str(uid))
+
 
 def add(request,uid):
     if(request.method =='GET'):
