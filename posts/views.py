@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .models import Post,User
 
 # Create your views here.
-
+# testing vs code with github 
 def index(request):
     if(request.method=='POST'):
         username=request.POST['username']
