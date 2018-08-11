@@ -191,6 +191,18 @@ body{
     color: #fff;
 }
 
+#mainSign p small{
+    padding-left: 10px;
+}
+
+#mainSign a{
+    color: #000;
+}
+
+#mainSign a:hover{
+    color: #00bfa5;
+}
+
 /* @media(max-height: 700px){
 
     #psudoDiv{
