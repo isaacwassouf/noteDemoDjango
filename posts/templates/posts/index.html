@@ -11,11 +11,15 @@
 
         <div id="list">
             <h3>Items: </h3>
+            {% if posts %}
             <ul>
                 {% for post in posts%}
                     <li><a href="{{post.user.id}}/info/{{post.id}}">{{post.title}}</a> <a href="{{post.user.id}}/modify/{{post.id}}">Modify</a></li>
                 {%endfor%}
             </ul>
+            {% else %}
+            <p style="padding-left: 3%; text-decoration: underline;"> There are no Notes yet</p>
+            {% endif%}
         </div>
         <div style="height: 20px;"></div>
 </div>

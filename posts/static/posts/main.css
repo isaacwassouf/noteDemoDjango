@@ -160,8 +160,9 @@ body{
     height: 30px;
 }
 
-#mainSign{
+.mainSign{
     border: 1px dotted #000;
+    border-radius: 10px;
     width: 40%;
     height: 400px;
     margin-top: 30px;
@@ -170,12 +171,12 @@ body{
     padding-top: 75px;
 }
 
-#mainSign h3{
-    margin-left: 3%;
+.mainSign h3{
+    margin-left: 5%;
     max-width: 338px;
 }
 
-#mainSign input{
+.mainSign input{
     width: 50%;
     height: 35px;
     border-radius: 5px;
@@ -184,23 +185,43 @@ body{
     margin-bottom: 20px;
 }
 
-#mainSign input[type="submit"]{
+.mainSign input[type="submit"]{
     width: 25%;
     margin-left: 12%;
     background-color: #00bfa5;
     color: #fff;
 }
 
-#mainSign p small{
+.mainSign p small{
     padding-left: 10px;
 }
 
-#mainSign a{
+.mainSign a{
     color: #000;
 }
 
-#mainSign a:hover{
+.mainSign a:hover{
     color: #00bfa5;
+}
+
+.mainSign label{
+    width:90px;
+    font-style: italic;
+    display: inline-block;
+}
+
+#signUp{
+    padding-left: 11%;
+    height: 420px;
+}
+
+#signUp h3{
+    padding-left: 15%;
+}
+
+#signUp input[type="submit"]{
+    margin-left: 28%;
+    margin-top: 6px;
 }
 
 /* @media(max-height: 700px){
