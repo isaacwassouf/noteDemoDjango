@@ -4,6 +4,7 @@ from .models import Post,User
 
 # Create your views here.
 # testing vs code with github 
+#testing from mbp
 def index(request):
     if(request.method=='POST'):
         username=request.POST['username']
