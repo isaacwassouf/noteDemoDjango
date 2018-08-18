@@ -72,3 +72,20 @@ def add(request,uid):
 def home(request):
     if(request.method=='GET'):
         return render(request,'posts/login.html')
+
+
+def signup(request):
+    if (request.method=='GET'):
+        return render(request,'posts/signup.html')
+
+    elif (request.method=='POST'):
+        firstname=request.POST['firstname']
+        lastname=request.POST['lastname']
+        age=request.POST['age']
+        username=request.POST['username']
+        password= request.POST['password']
+
+        newUser=User(firstname=firstname,lastname=lastname,age=age,username=username,password=password)
+        newUser.save()
+        return redirect('/posts/'+str(newUser.id))
+        
