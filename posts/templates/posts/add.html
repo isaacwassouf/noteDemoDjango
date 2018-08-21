@@ -2,7 +2,7 @@
 {% block main%}
 <div id="main">
     <div class="modify">
-        <form action="done" method="POST">
+        <form action="/posts/done" method="POST">
             {% csrf_token %}
             <input type="text" value="{{title}}" name="title">
             <hr class="line">

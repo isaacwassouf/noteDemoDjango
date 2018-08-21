@@ -13,37 +13,38 @@ def index(request):
         user = authenticate(request,username=username,password=password)
         if user is not None:
             login(request,user)
-            return redirect('/posts/'+str(user.id))
+            return redirect('/posts')
 
 
 
-def posts(request,uid):
+def posts(request):
     if request.user.is_authenticated:
+        uid=request.user.id
         posts=Post.objects.filter(user=uid)
         context={
             'posts':posts,
-            'uid': uid,
         }
         return render(request,'posts/index.html',context)
     else:
         return HttpResponse("User is not looged in")
 
 
-def item(request,id,uid):
+def item(request,id):
     if request.user.is_authenticated:
-        post= Post.objects.get(id=id,user=uid)
+        # uid=request.user.id
+        post= Post.objects.get(id=id)
         context={
             'post': post
         }
-        print(request.user.id)
+        # print(request.user.id)
         return render(request,'posts/item.html',context)
     else:
         return HttpResponse("User is not logged in")
 
-def modify(request,id,uid):
+def modify(request,id):
     if request.user.is_authenticated:
         if (request.method=='GET'):
-            post=Post.objects.get(id=id,user=uid)
+            post=Post.objects.get(id=id)
             context={
             'post':post
             }
@@ -57,18 +58,17 @@ def modify(request,id,uid):
             post.title=title
             post.content=content
             post.save()
-            return redirect('/posts/'+str(uid))
+            return redirect('/posts')
     else:
         return HttpResponse("User is not logged in")
 
 
-def add(request,uid):
+def add(request):
     if request.user.is_authenticated:
         if(request.method =='GET'):
             title=request.GET['title']
             context={
                 'title':title,
-                'uid':uid
             }
             return render(request,'posts/add.html',context)
 
@@ -76,10 +76,11 @@ def add(request,uid):
             title=request.POST['title']
             content=request.POST['content']
 
+            uid=request.user.id
             user= User.objects.get(id=uid)
             newPost=Post( title=title,content=content,user=user)
             newPost.save()
-            return redirect('/posts/'+str(uid))
+            return redirect('/posts')
     else:
         return HttpResponse("User is not looged in")
 
