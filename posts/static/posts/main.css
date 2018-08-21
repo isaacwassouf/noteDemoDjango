@@ -14,9 +14,23 @@ body{
 }
 
 #topBar h2{
+    display: inline-block;
     padding-left: 5%;
     margin-top:0%;
     padding-top: 10px;
+}
+
+#topBar h4{
+    padding-left: 5%;
+    margin-top:0%;
+    padding-top: 15px;
+    float: right;
+    padding-right: 15px;
+}
+
+#topBar h4 a{
+    text-decoration: none;
+    color: inherit;
 }
 
 #main{

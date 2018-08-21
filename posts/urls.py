@@ -11,4 +11,5 @@ urlpatterns=[
     path('posts/add',views.add,name='add'),
     path('posts/done',views.add,name='done'),
     path('signup',views.signup,name='signup'),
+    path('posts/signout',views.signout,name='signout'),
 ]

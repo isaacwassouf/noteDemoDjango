@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse,Http404
 from .models import Post
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
 
 # Create your views here.
 
@@ -102,4 +102,10 @@ def signup(request):
         newUser=User.objects.create_user(username=username,password=password,first_name=firstname,last_name=lastname)
         newUser.save()
         return redirect('/')
-        
+
+def signout(request):
+    if request.user.is_authenticated:
+        logout(request)
+        return redirect('/')
+    else:
+        return HttpResponse('unautherized request')
