@@ -25,12 +25,13 @@ html,body{
 }
 
 #topBar h4{
-    padding-left: 5%;
+    padding-left: 2%;
     margin-top:0%;
     padding-top: 15px;
     float: right;
     padding-right: 15px;
 }
+
 
 #topBar h4 a{
     text-decoration: none;
@@ -158,6 +159,15 @@ html,body{
     border-radius: 5px;
     border: 1px dotted #000;
     padding-left: 10px;
+}
+
+#secretPass{
+    width: 30%;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px dotted #000;
+    padding-left: 10px;
+    margin-top: 3px;
 }
 
 .modify textarea{

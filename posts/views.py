@@ -109,3 +109,78 @@ def signout(request):
         return redirect('/')
     else:
         return HttpResponse('unautherized request')
+
+def secret(request):
+    if request.user.is_authenticated:
+        if request.method=='GET':
+            return render(request,'posts/secret.html')
+        else:
+            title=request.POST['title']
+            content= request.POST['content']
+            password= request.POST['password']
+            uid= request.user.id
+            user= User.objects.get(id=uid)
+
+            newPost= Post(title=title,content=content,user=user,lock_password=password)
+            newPost.is_locked=True
+            newPost.save()
+            return redirect('/posts')
+
+    else:
+        return HttpResponse('user is not logged in')
+
+def requestPassInfo(request,id):
+    if request.user.is_authenticated:
+        post= Post.objects.get(id=id)
+
+        return render(request,'posts/requestPassInfo.html',{'post':post})
+    else:
+        return HttpResponse('user is not logged in')
+
+def secretItem(request,id):
+    if request.user.is_authenticated:
+        fetched_password= request.POST['password']
+        post= Post.objects.get(id=id)
+        password= post.lock_password
+
+        if password==fetched_password:
+            return render(request,'posts/secretItem.html',{'post':post})
+        else:
+            return HttpResponse('wrong password')
+    else:
+        return HttpResponse('user is not logged in')
+
+
+def requestPassMod(request,id): 
+    if request.user.is_authenticated:
+        post= Post.objects.get(id=id)
+
+        return render(request,'posts/requestPassMod.html',{'post':post})
+    else:
+        return HttpResponse('user is not logged in')
+
+def ModifySecret(request,id):
+    if request.user.is_authenticated:
+        fetched_password= request.POST['password']
+        post= Post.objects.get(id=id)
+        password= post.lock_password
+
+        if password==fetched_password:
+            return render(request,'posts/ModifySecret.html',{'post':post})
+        else:
+            return HttpResponse('wrong password')
+    else:
+        return HttpResponse('user is not logged in')
+
+def modifySecret(request,id):
+    if request.user.is_authenticated:
+        title=request.POST['title']
+        content=request.POST['content']
+
+        post=Post.objects.get(id=id)
+        post.title=title
+        post.content=content
+        post.save()
+        return redirect('/posts')
+    else:
+        return HttpResponse('user is not logged in')
