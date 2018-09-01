@@ -4,9 +4,15 @@
     <div class="modify">
         <form action="/posts/done" method="POST">
             {% csrf_token %}
-            <input type="text" value="{{title}}" name="title">
+
+            {{form.title.errors}}
+            {{form.title}}
+
             <hr class="line">
-            <textarea name="content"></textarea>
+
+            {{form.content.errors}}
+            {{form.content}}
+
             <input type="submit" value="Add">
         </form>
     </div>

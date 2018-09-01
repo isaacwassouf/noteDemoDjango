@@ -6,17 +6,22 @@
     <h3>Sign up to Create Notes</h3>
     <form action="signup" method="POST">
         {% csrf_token %}
-        <label for="firstname"> First Name: </label>
-        <input type="text" id="firstname" name="firstname"> <br>
 
-        <label for="lastname">Last Name:  </label>
-        <input type="text" name="lastname" ><br>
+        {{ form.firstname.errors }}
+        <label for="{{form.firstname.id_for_label}}"> First Name: </label>
+        {{form.firstname}} <br>
 
-        <label for="username"> Username: </label>
-        <input type="text" id="username" name="username"  ><br>
+        {{form.lastname.errors}}
+        <label for="{{form.lastname.id_for_label}}">Last Name:  </label>
+        {{form.lastname}}<br>
 
-        <label for="password"> Password: </label>
-        <input type="password" id="password" name="password" ><br>
+        {{form.username.errors}}
+        <label for="{{form.usename.id_for_label}}"> Username: </label>
+        {{form.username}}<br>
+
+        {{form.password.errors}}
+        <label for="{{form.password.id_for_label}}"> Password: </label>
+        {{form.password}}<br>
 
         <input type="submit" value="Sign Up">
     </form>

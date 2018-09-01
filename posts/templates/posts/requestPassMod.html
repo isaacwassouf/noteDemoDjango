@@ -5,7 +5,9 @@
         <form action="/posts/secret/modify/{{post.id}}" method="POST">
             {% csrf_token %}
             <h3>Please provid the password for : {{post.title}}</h3>
-            <input type="text" id="secretPass" name="password" placeholder="password for the secret Item">
+            
+            {{form.password.errors}}
+            {{form.password}}
             <input type="submit" value="Add">
         </form>
     </div>

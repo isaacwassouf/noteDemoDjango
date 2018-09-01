@@ -16,6 +16,6 @@ urlpatterns=[
     path('posts/info/requestPassword/<int:id>',views.requestPassInfo,name='requestPassword'),
     path('posts/modify/requestPassword/<int:id>',views.requestPassMod,name='requestPassword'),
     path('posts/secret/<int:id>',views.secretItem,name='secretItem'),
-    path('posts/secret/modify/<int:id>',views.ModifySecret,name='modifySecret'),
-    path('posts/secret/modify/<int:id>/modified',views.modifySecret,name='modifySecret'),
+    path('posts/secret/modify/<int:id>',views.modifySecret,name='modifySecret'),
+    path('posts/secret/modify/<int:id>/modified',views.modifiedSecret,name='modifySecret'),
 ]
