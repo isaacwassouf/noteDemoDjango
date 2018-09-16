@@ -258,9 +258,11 @@ html,body{
     margin-top: 6px;
 }
 
-/* @media(max-height: 700px){
-
-    #psudoDiv{
-        height: 500px;
+@media(max-width: 650px){
+    
+    #addItem input[type="submit"]{
+        width: 85%;
+        margin-top: 10px;
     }
-} */
+
+}
